@@ -31,7 +31,12 @@ function ShowHideInstructions(){
     }
     else par3.style.display = 'inline';      
         };   
-		
+$.ajaxPrefilter(function(options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+});
+	
 $(document).ready(function () {
   $(this).keypress(function(event) {
      if (event.which == '13') {

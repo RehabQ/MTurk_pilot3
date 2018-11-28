@@ -1,0 +1,379 @@
+
+
+<html>
+<span class='notranslate'>
+<head>
+<meta charset="utf-8">
+
+
+<title> Classification of Twitters Content </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<script defer type="text/javascript" >
+function ShowHideInstructions(){
+       par = document.getElementById("Instructions");
+    if(par.style.display == 'inline' ){
+        par.style.display = 'none';
+    }
+    else par.style.display = 'inline';
+        
+        par2 = document.getElementById("list-item");
+             if(par2.style.display == 'inline' ){
+        par2.style.display = 'none';
+    }
+    else par2.style.display = 'inline';
+    
+        par3 = document.getElementById("item");
+    if(par3.style.display == 'inline' ){
+        par3.style.display = 'none';
+    }
+    else par3.style.display = 'inline';      
+        };   
+		
+$(document).ready(function () {
+  $(this).keypress(function(event) {
+     if (event.which == '13') {
+                event.preventDefault();}
+                });  
+    $(this).bind('copy paste',function(e) {
+         e.preventDefault(); return false; 
+      });		
+ 	      
+  
+
+
+  $('#demo-form').parsley().on('form:submit', function(formInstance) {
+    try {
+      window.parent.postMessage($('#demo-form').serialize(), '*');
+    } catch(err) {
+    console.log(err);
+}
+    return false;
+  });
+
+});
+
+</script>
+
+
+    <!--  -->
+<h2> Classification of Twitters Content </h2><br/>
+    By accepting this HIT you accept our <a href="https://www.alessandrochecco.info/static/Ethics_info_consent.html" rel="noopener noreferrer" target="_blank">Terms and Conditions.</a>    
+   
+   <h3 onclick="ShowHideInstructions()" style="color: red">Click here to show/hide instructions</h3>
+	<p id="Instructions" hidden>
+<b>All the workers that achieve at least 80% correct answers will receive a bonus of 35 cents. If your accuracy is less than 80%, we will <u>not</u> reject your HIT. </b> <br/>
+  The goal of this task is to categorize each tweet into one of the nine categories given below. <br />   
+  These tweets were collected during some crisis/emergency situation.  <br />  
+  Please, read the text and decide only based on the content of the tweet, you do not need to access any of the URLs in tweets. <br /> 
+<br/>
+		
+		<h4 id="item" hidden> Each tweet can be classified to one of the following nine categories: </h2> <br /> 
+		<ul id="list-item" hidden >
+		
+			<li>-  Injured or dead people - Reports of casualties and/or injured people due to the crisis.</li>
+			<li>-  Missing, trapped, or found people - Reports and/or questions about missing or found people.</li>
+			<li>-  Displaced people and evacuations - People who have relocated due to the crisis, even for a short time (includes evacuations).</li>
+			<li>-  Infrastructure and utilities damage - Reports of damaged buildings, roads, bridges, or utilities/services interrupted or restored.</li>
+			<li>-  Donation needs or offers or volunteering services - Reports of urgent needs or donations of shelter and/or supplies such as food, water, clothing, money, medical supplies or blood; and volunteering services.</li>
+			<li>-  Caution and advice - Reports of warnings issued or lifted, guidance and tips.</li>
+			<li>-  Sympathy and emotional support - Prayers, thoughts, and emotional support.</li>
+			<li>-  Other useful information - Other useful information that helps understand the situation.</li>
+			<li>-  Not related or irrelevant - Unrelated to the situation or irrelevant. </li>	
+		</ul>
+	</p>
+        </p>  <br />
+    </head>
+
+ <hr>
+ <br />
+ <body>
+    <form id="demo-form">
+    <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+    
+       <h4> " #USAHeadlines Cleanup Efforts Underway after Major Earthquake in California http://t.co/TscSQQ2byw "</h4><br />
+       <h3>Choose the right category for the above tweet:</h3><br /> 
+    <p><input type="radio" name="_1_" value="injured_or_dead_people" id="1_1"  required="">
+            <label for="1_1">Injured or dead people</label><br />
+        <input type="radio" name="_1_" value="other_useful_information" id="2_1">
+            <label for="2_1">Other useful information</label><br />
+        <input type="radio" name="_1_" value="infrastructure_and_utilities_damage" id="3_1">
+            <label for="3_1">Infrastructure and utilities damage</label><br />
+        <input type="radio" name="_1_" value="not_related_or_irrelevant" id="4_1">
+            <label for="4_1">Not related or irrelevant</label><br />
+        <input type="radio" name="_1_" value="sympathy_and_emotional_support" id="5_1">
+            <label for="5_1">Sympathy and emotional support</label><br />
+        <input type="radio" name="_1_" value="donation_needs_or_offers_or_volunteering_services" id="6_1">
+            <label for="6_1">Donation needs or offers or volunteering services</label><br />
+        <input type="radio" name="_1_" value="Missing_trapped_or_found people" id="7_1">
+            <label for="7_1">Missing, trapped, or found people</label><br />     
+        <input type="radio" name="_1_" value="displaced_people_and_evacuations" id="8_1">
+            <label for="8_1">Displaced people and evacuations</label><br />       
+        <input type="radio" name="_1_" value="caution_and_advice" id="9_1">
+            <label for="9_1">Caution and advice</label>       
+    </p> <br /> 
+       
+     
+ 
+            <input type="reset" class="btn btn-default" value="reset"> 
+            <input type='submit' class="btn btn-default"  value='submit' ></p>
+
+ </form>
+
+</body>
+</span>
+
+</html>
+
+
+<style type="text/css"; charset="utf-8">
+body {
+  color: #111111;
+}
+.branding {
+  width: 100%;
+  color: #676E72;;
+  font-size: 1.1em;
+  text-align: center;
+  background-color: #F1BC32;
+  background-color: rgba(241,188,50,.15);
+  padding: 24px;
+}
+.branding a {
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .nav-justified {
+    max-height: 52px;
+  }
+  .nav-justified > li > a {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #d5d5d5;
+  }
+  .nav-justified > li:first-child > a {
+    border-left: 2;
+    border-radius: 5px 0 0 5px;
+  }
+  .nav-justified > li:last-child > a {
+    border-radius: 0 5px 5px 0;
+    border-right: 0;
+  }
+  .sidebar {
+    display: block;
+  }
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .masthead,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .affix-top {
+    top: 30px;
+  }
+  .sidebar.affix {
+    top: 10px;
+    margin-top: 0px;
+  }
+}
+.footer {
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+/* Customize the nav-justified links to be fill the entire space of the .navbar */
+.nav-justified {
+  background-color: #eee;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.nav-justified > li > a {
+  margin-bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #777;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #d5d5d5;
+  background-color: #e5e5e5;
+  /* Old browsers */
+
+  background-repeat: repeat-x;
+  /* Repeat the gradient */
+
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+  /* FF3.6+ */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #e5e5e5));
+  /* Chrome,Safari4+ */
+
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+  /* Chrome 10+,Safari 5.1+ */
+
+  background-image: -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+  /* Opera 11.10+ */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#e5e5e5', GradientType=0);
+  /* IE6-9 */
+
+  background-image: linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+  /* W3C */
+
+}
+.nav-justified > .active > a,
+.nav-justified > .active > a:hover,
+.nav-justified > .active > a:focus {
+  background-color: #ddd;
+  background-image: none;
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+.nav-justified > li:first-child > a {
+  border-radius: 5px 5px 0 0;
+}
+.nav-justified > li:last-child > a {
+  border-bottom: 0;
+  border-radius: 0 0 5px 5px;
+}
+.header h3 {
+  display: inline-block;
+}
+.social-buttons {
+  padding: 5px 20px;
+}
+/*
+* Affix sidebar
+*
+*/
+.sidebar {
+  margin-top: 40px;
+}
+.sidebar .nav > li > a {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111111;
+  padding: 4px 20px;
+}
+.sidebar .nav > .active > ul,
+.sidebar .nav > .active:hover > ul,
+.sidebar .nav > .active:focus > ul {
+  display: block;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  padding-left: 18px;
+  font-weight: 700;
+  color: #FF851B;
+  background-color: transparent;
+  border-left: 2px solid #FF851B;
+}
+.sidebar .nav .nav {
+  display: none;
+  padding-bottom: 10px;
+}
+.sidebar .nav .nav > li > a {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 30px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.sidebar .nav .nav > .active > a {
+  font-weight: 500;
+  padding-left: 28px;
+}
+/*
+* Callouts
+*
+* Not quite alerts, but custom and helpful notes for folks reading the docs.
+* Requires a base and modifier class.
+*/
+/* Common styles for all types */
+.bs-callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code {
+  background-color: #fff;
+  border-radius: 3px;
+}
+/* Variations */
+.bs-callout-danger {
+  background-color: #fdf7f7;
+  border-color: #d9534f;
+}
+.bs-callout-danger h4 {
+  color: #d9534f;
+}
+.bs-callout-warning {
+  background-color: #fcf8f2;
+  border-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+  color: #f0ad4e;
+}
+.bs-callout-info {
+  background-color: #f4f8fa;
+  border-color: #5bc0de;
+}
+.bs-callout-info h4 {
+  color: #5bc0de;
+}
+.hundred {
+  width: 100%;
+}
+version {
+  color: #949494;
+  font-size: 0.9em;
+}
+h3 {
+  color: #FF851B;
+}
+.back-to-top {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+}
+
+p.parsley-error {
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border: 1px solid #EED3D7;
+}
+
+
+p.parsley-success {
+    color: #468847;
+    background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+}
+
+}</style>

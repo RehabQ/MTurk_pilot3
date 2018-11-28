@@ -46,7 +46,26 @@ $(document).ready(function () {
          e.preventDefault(); return false; 
       });		
  	      	
+console.log("Test Detecting Google Chrome Translation ");
 
+const observer = new MutationObserver(function(mutations){ 
+    mutations.forEach(function(mutation){
+      console.log('Mutation type: ' + mutation.type );
+      console.log(mutation.target);
+      if( mutation.target.classList.contains('translated-rtl') || mutation.target.classList.contains('translated-ltr')){
+        alert("page has been translated and translation was cancelled");
+  			$('#not_eng_worker').val("1");
+  			console.log(not_eng_worker.value);
+      }
+    });
+ });
+console.log(document.querySelector('html'));
+observer.observe(document.querySelector('html'), { 
+  attributes: true, 
+  attributeOldValue: true
+});
+ 
+    console.log("testdone");
 
   $('#demo-form').parsley().on('form:submit', function(formInstance) {
     try {
@@ -94,9 +113,13 @@ $(document).ready(function () {
  <hr>
  <br />
  <body>
+	 <span class='notranslate'>
+
     <form id="demo-form">
     <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
-       <h4> " #USAHeadlines Cleanup Efforts Underway after Major Earthquake in California http://t.co/TscSQQ2byw "</h4><br />
+    <input type='hidden' value='0' name='not_eng_worker' id='not_eng_worker'/>
+
+	    <h4> " #USAHeadlines Cleanup Efforts Underway after Major Earthquake in California http://t.co/TscSQQ2byw "</h4><br />
        <h3>Choose the right category for the above tweet:</h3><br /> 
     <p><input type="radio" name="_1_" value="injured_or_dead_people" id="1_1"  required="">
             <label for="1_1">Injured or dead people</label><br />
@@ -124,7 +147,7 @@ $(document).ready(function () {
             <input type='submit' class="btn btn-default"  value='submit' ></p>
 
  </form>
-
+</span>
 </body>
 
 
